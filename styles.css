@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+--dark-cyan: hsl(158, 36%, 37%);
+--cream: hsl(30, 38%, 92%);
+--very-dark-blue: hsl(212, 21%, 14%);
+--dark-grayish-blue: hsl(228, 12%, 48%);
+--white: hsl(0, 0%, 100%);
+
+--fontfamilyTitle: 'Fraunces' , serif;
+--fontfamilyNormal: 'Montserrat' , sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+body{
+  font-family: var(--fontfamilyNormal);
+  font-weight: 500;
+  color: var(--dark-grayish-blue);
+  font-size: 0.8rem;
+  background-color: var(--cream);
+
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+.product{
+  --content-padding:2rem;
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  display: grid;
+  max-width: 600px;
+
+}
+
+.group{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content{
+  padding: var(--content-padding);
+  display: grid;
+  gap: 1rem;
+  
+}
+
+.catagory{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.title{
+  font-family: var(--fontfamilyTitle);
+  font-size: 2rem;
+  color: var(--very-dark-blue);
+}
+
+h1{
+  line-height: 1;
+}
+
+.price{
+  font-size: 2rem;
+  font-family: var(--fontfamilyTitle);
+  color: var(--dark-cyan);
+
+}
+.button{
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+}
+
+.button:hover{
+  background-color: #184131;
+}
+.button[data-icon="shopping-cart"]::before{
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url("images/icon-cart.svg");
+}
+
+@media (min-width: 600px)
+{
+  .product{
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+
+}
+
+
